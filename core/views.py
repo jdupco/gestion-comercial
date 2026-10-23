@@ -1,12 +1,10 @@
 from django.shortcuts import render
 
+from .models import Cliente
+
 
 def inicio(request):
-    clientes = [
-        {"nombre": "Ana", "plan": "Integral"},
-        {"nombre": "Carlos", "plan": "Familiar"},
-        {"nombre": "Laura", "plan": "Básico"},
-    ]
+    clientes = Cliente.objects.all().order_by("nombre")
 
     contexto = {
         "nombre_empresa": "Mi empresa",

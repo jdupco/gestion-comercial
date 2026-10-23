@@ -8,7 +8,7 @@
     <ul>
         {% for cliente in clientes %}
             <li>
-                {{ cliente.nombre }} — Plan {{ cliente.plan }}
+                {{ cliente.nombre }} — {{ cliente.correo }}
             </li>
         {% empty %}
             <li>No hay clientes registrados.</li>
