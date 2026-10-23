@@ -1,7 +1,16 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def inicio(request):
-    return HttpResponse(
-        "Bienvenido al sistema de gestión comercial"
-    )
+    clientes = [
+        {"nombre": "Ana", "plan": "Integral"},
+        {"nombre": "Carlos", "plan": "Familiar"},
+        {"nombre": "Laura", "plan": "Básico"},
+    ]
+
+    contexto = {
+        "nombre_empresa": "Mi empresa",
+        "clientes": clientes,
+    }
+
+    return render(request, "core/inicio.html", contexto)
