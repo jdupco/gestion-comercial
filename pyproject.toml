@@ -1,0 +1,26 @@
+[project]
+name = "gestion-comercial"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "django>=6.1.2",
+    "python-dotenv>=1.2.4",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.17.2",
+    "ty>=0.0.91",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+exclude = ["migrations"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
